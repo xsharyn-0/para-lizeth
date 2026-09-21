@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+rel="stylesheet">
+
+<title>Para ti ❤️</title>
+
+
+<style>
+
+/* =========================
+   GENERAL
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    font-family: Georgia, serif;
+
+    background: #000;
+    color: white;
+}
+
+
+/* =========================
+   PRESENTACIÓN
+   ========================= */
+
+.presentacion {
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+}
+
+
+/* =========================
+   TODAS LAS DIAPOSITIVAS
+   ========================= */
+
+.diapositiva {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 1;
+
+    transition:
+        opacity 0.6s ease,
+        visibility 0.6s ease;
+}
+
+
+.diapositiva.activa {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    z-index: 5;
+}
+
+
+/* =========================
+   DIAPOSITIVA 1
+   PORTADA
+   ========================= */
+
+.portada {
+
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.75)
+        ),
+        url("fotos/portada.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+.contenido-portada {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+
+    padding: 30px;
+}
+
+
+.mediano {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+
+    opacity: 0.8;
+}
+
+
+.contenido-portada h1 {
+
+    font-size:
+        clamp(42px, 7vw, 76px);
+
+    font-weight: normal;
+
+    line-height: 1.1;
+
+    margin: 0;
+}
+
+
+.linea {
+
+    width: 70px;
+
+    height: 1px;
+
+    background: white;
+
+    margin: 30px auto;
+
+    opacity: 0.7;
+}
+
+
+.frase {
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    line-height: 1.7;
+
+    opacity: 0.85;
+}
+
+
+.boton-portada {
+
+    margin-top: 35px;
+
+    padding: 13px 35px;
+
+    background: transparent;
+
+    color: white;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.7);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+}
+
+
+.boton-portada:hover {
+
+    background: white;
+
+    color: black;
+}
+
+
+/* =========================
+   DIAPOSITIVA 2
+   INTRODUCCIÓN
+   ========================= */
+
+.introduccion {
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(126,87,145,0.18),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #17131c,
+            #241827,
+            #100e15
+        );
+}
+
+
+.contenido-introduccion {
+
+    width: min(850px, 90vw);
+
+    padding: 40px 30px;
+}
+
+
+.texto-introduccion {
+
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    font-size:
+        clamp(19px, 2.2vw, 25px);
+
+    line-height: 1.85;
+
+    font-style: italic;
+
+    color: #e3d9d4;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,0.45);
+}
+
+
+.texto-introduccion.secundario {
+
+    margin-top: 30px;
+
+    color: #cfc1bd;
+
+    font-size:
+        clamp(17px, 2vw, 22px);
+}
+
+
+/* =========================
+   DIAPOSITIVA 3
+   CARTAS
+   ========================= */
+
+.cartas {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #1c1b19 0%,
+            #11100f 70%
+        );
+
+    color: #eee8dd;
+}
+
+
+.encabezado-cartas {
+
+    margin-bottom: 18px;
+
+    max-width: 700px;
+}
+
+
+.encabezado-cartas .pequeno {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.45;
+
+    margin-bottom: 12px;
+}
+
+
+.encabezado-cartas h2 {
+
+    font-size:
+        clamp(28px, 3vw, 40px);
+
+    font-weight: normal;
+
+    margin: 0;
+}
+
+
+.contenedor-cartas {
+
+    width: min(850px, 88vw);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+
+    position: relative;
+
+    z-index: 20;
+}
+
+
+.carta {
+
+    height: 105px;
+
+    perspective: 1200px;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 21;
+}
+
+
+.carta-interna {
+
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    transition:
+        transform 0.8s
+        cubic-bezier(
+            0.2,
+            0.7,
+            0.2,
+            1
+        );
+
+    transform-style: preserve-3d;
+}
+
+
+.carta-frente,
+.carta-reverso {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    backface-visibility: hidden;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(60,52,42,0.35);
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,0.18);
+}
+
+
+.carta-frente {
+
+    background:
+        linear-gradient(
+            135deg,
+            #eee7da,
+            #e4dccd
+        );
+
+    color: #292621;
+}
+
+
+.carta-frente span,
+.carta-reverso span {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.45;
+
+    position: absolute;
+
+    top: 16px;
+}
+
+
+.detalle-carta {
+
+    width: 34px;
+    height: 34px;
+
+    border:
+        1px solid
+        rgba(50,45,38,0.35);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.detalle-carta::after {
+
+    content: "✦";
+
+    font-size: 12px;
+}
+
+
+.carta-reverso {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ddd2c0,
+            #d4c7b3
+        );
+
+    color: #292621;
+
+    transform: rotateY(180deg);
+}
+
+
+.carta-reverso p {
+
+    margin: 0;
+
+    max-width: 270px;
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    font-style: italic;
+}
+
+
+.carta.abierta
+.carta-interna {
+
+    transform: rotateY(180deg);
+}
+
+
+.carta:nth-child(1) {
+    transform: rotate(-1deg);
+}
+
+.carta:nth-child(2) {
+    transform: rotate(1.2deg);
+}
+
+.carta:nth-child(3) {
+    transform: rotate(-0.6deg);
+}
+
+.carta:nth-child(4) {
+    transform: rotate(0.8deg);
+}
+
+.carta:nth-child(5) {
+    transform: rotate(-1.2deg);
+}
+
+.carta:nth-child(6) {
+    transform: rotate(0.5deg);
+}
+
+.carta:nth-child(7) {
+    transform: rotate(1deg);
+}
+
+.carta:nth-child(8) {
+    transform: rotate(-0.8deg);
+}
+
+.carta:nth-child(9) {
+    transform: rotate(0.6deg);
+}
+
+
+.mensaje-final {
+
+    margin: 15px 0 0;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    opacity: 0;
+
+    transform: translateY(8px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+
+.mensaje-final.mostrar {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   DIAPOSITIVA 4
+   ========================= */
+
+.mensaje-especial {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.55)
+        ),
+        url("fotos/atardecer.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    color: white;
+}
+
+
+.contenido-mensaje-especial {
+
+    position: relative;
+
+    z-index: 20;
+
+    width: min(750px, 90vw);
+
+    padding: 30px;
+}
+
+
+.mensaje-especial h2 {
+
+    margin: 0 0 35px;
+
+    font-size:
+        clamp(34px, 5vw, 58px);
+
+    font-weight: normal;
+
+    line-height: 1.25;
+
+    color: white;
+
+    text-shadow:
+        0 3px 12px rgba(0,0,0,0.9),
+        0 5px 25px rgba(0,0,0,0.7);
+}
+
+
+.mensaje-especial p {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size:
+        clamp(18px, 2.2vw, 25px);
+
+    font-style: italic;
+
+    line-height: 1.8;
+
+    color: white;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,0.9),
+        0 4px 20px rgba(0,0,0,0.7);
+}
+
+
+/* =========================
+   DIAPOSITIVA 5 — FINAL
+   ========================= */
+
+.final {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    background: #000;
+
+    color: white;
+}
+
+
+/* IMAGEN DEL FONDO */
+
+.fondo-final {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    z-index: 0;
+
+    filter: brightness(0.80);
+}
+
+
+/* OSCURECIMIENTO */
+
+.final::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,0.20);
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* TEXTO */
+
+.final h1 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        clamp(75px, 11vw, 165px);
+
+    font-weight: normal;
+
+    color: #fffaf5;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 4px 15px rgba(0,0,0,0.55),
+        0 0 25px rgba(255,255,255,0.25);
+}
+
+
+/* =========================
+   NAVEGACIÓN
+   ========================= */
+
+.zona-izquierda,
+.zona-derecha {
+
+    position: fixed;
+
+    top: 0;
+    bottom: 0;
+
+    width: 20%;
+
+    z-index: 10;
+
+    cursor: pointer;
+}
+
+
+.zona-izquierda {
+    left: 0;
+}
+
+
+.zona-derecha {
+    right: 0;
+}
+
+
+/* =========================
+   CELULAR
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .diapositiva {
+        padding: 25px;
+    }
+
+    .contenedor-cartas {
+
+        width: 95%;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .carta {
+        height: 95px;
+    }
+
+    .carta-reverso p {
+        font-size: 13px;
+    }
+
+    .mensaje-especial h2 {
+        font-size: 34px;
+    }
+
+    .mensaje-especial p {
+        font-size: 18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="presentacion">
+
+
+<!-- =========================
+     DIAPOSITIVA 1
+     ========================= -->
+
+<section
+    class="diapositiva activa portada">
+
+    <div class="contenido-portada">
+
+        <p class="mediano">
+            Lizeth
+        </p>
+
+        <h1>
+            Hay algo que quiero decirte...
+        </h1>
+
+        <div class="linea"></div>
+
+        <p class="frase">
+            Algo que quiero que nunca olvides
+        </p>
+
+        <button
+            class="boton-portada"
+            onclick="siguiente()">
+
+            ABRIR
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DIAPOSITIVA 2
+     ========================= -->
+
+<section
+    class="diapositiva introduccion">
+
+    <div class="contenido-introduccion">
+
+        <p class="texto-introduccion">
+
+            Aunque a veces pueda parecer que algo no me importa,
+            en realidad yo valoro cada pequeño detalle tuyo.
+
+        </p>
+
+
+        <p class="texto-introduccion secundario">
+
+            Por eso hice esto, para que recuerdes lo importante
+            que eres para mí y para que sepas que me siento
+            muy agradecido por tenerte.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DIAPOSITIVA 3
+     ========================= -->
+
+<section
+    class="diapositiva cartas">
+
+
+    <div class="encabezado-cartas">
+
+        <p class="pequeno">
+
+            Quiero agradecerte por esto y muchas cosas más
+
+        </p>
+
+        <h2>
+            Gracias por:
+        </h2>
+
+    </div>
+
+
+    <div class="contenedor-cartas">
+
+
+        <div class="carta">
+
+            <div class="carta-interna">
+
+                <div class="carta-frente">
+
+                    <span>01</span>
+
+                    <div class="detalle-carta">
+                    </div>
+
+                </div>
+
+                <div class="carta-reverso">
+
+                    <span>01</span>
+
+                    <p>
+                        Gracias por preocuparte por mí.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="carta">
+
+            <div class="carta-interna">
+
+                <div class="carta-frente">
+
+                    <span>02</span>
+
+                    <div class="detalle-carta">
+                    </div>
+
+                </div>
+
+                <div class="carta-reverso">
+
+                    <span>02</span>
+
+                    <p>
+                        Gracias por darme tanto cariño.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="carta">
+
+            <div class="carta-interna">
+
+                <div class="carta-frente">
+
+                    <span>03</span>
+
+                    <div class="detalle-carta">
+                    </div>
+
+                </div>
+
+                <div class="carta-reverso">
+
+                    <span>03</span>
+
+                    <p>
+                        Gracias por estar pendiente de mí.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="carta">
+
+            <div class="carta-interna">
+
+                <div class="carta-frente">
+
+                    <span>04</span>
+
+                    <div class="detalle-carta">
+                    </div>
+
+                </div>
+
+                <div class="carta-reverso">
+
+                    <span>04</span>
+
+                    <p>
+                        Gracias por hacerme sentir importante.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="carta">
+
+            <div class="carta-interna">
+
+                <div class="carta-frente">
+
+                    <span>05</span>
+
+                    <div class="detalle-carta">
+                    </div>
+
+                </div>
+
+                <div class="carta-reverso">
+
+                    <span>05</span>
+
+                    <p>
+                        Gracias por esforzarte en hacer cosas por mí.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="carta">
+
+            <div class="carta-interna">
+
+                <div class="carta-frente">
+
+                    <span>06</span>
+
+                    <div class="detalle-carta">
+                    </div>
+
+                </div>
+
+                <div class="carta-reverso">
+
+                    <span>06</span>
+
+                    <p>
+                        Gracias por dejarme conocerte más.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="carta">
+
+            <div class="carta-interna">
+
+                <div class="carta-frente">
+
+                    <span>07</span>
+
+                    <div class="detalle-carta">
+                    </div>
+
+                </div>
+
+                <div class="carta-reverso">
+
+                    <span>07</span>
+
+                    <p>
+                        Gracias por ser verdadera conmigo.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="carta">
+
+            <div class="carta-interna">
+
+                <div class="carta-frente">
+
+                    <span>08</span>
+
+                    <div class="detalle-carta">
+                    </div>
+
+                </div>
+
+                <div class="carta-reverso">
+
+                    <span>08</span>
+
+                    <p>
+                        Gracias por hacerme feliz.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="carta">
+
+            <div class="carta-interna">
+
+                <div class="carta-frente">
+
+                    <span>09</span>
+
+                    <div class="detalle-carta">
+                    </div>
+
+                </div>
+
+                <div class="carta-reverso">
+
+                    <span>09</span>
+
+                    <p>
+                        Gracias por insistir en mí.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <p class="mensaje-final">
+        Gracias por elegirme, mi amor.
+    </p>
+
+
+</section>
+
+
+<!-- =========================
+     DIAPOSITIVA 4
+     ========================= -->
+
+<section
+    class="diapositiva mensaje-especial">
+
+
+    <div class="contenido-mensaje-especial">
+
+        <h2>
+            Nunca he sido alguien muy expresivo.
+        </h2>
+
+        <p>
+
+            Pero por ti intento demostrar todo lo que siento,
+            porque quiero ser mejor para ti y para nosotros.
+            Esto solo es una pequeña demostración de lo que siento por ti...
+
+        </p>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================
+     DIAPOSITIVA 5
+     ========================= -->
+
+<section
+    class="diapositiva final">
+
+<img
+    src="fotos/final.jpg"
+    class="fondo-final"
+    alt="">
+
+    <h1>
+        Te amo, Lizeth
+    </h1>
+
+
+</section>
+
+
+</div>
+
+
+<!-- =========================
+     ZONAS DE NAVEGACIÓN
+     ========================= -->
+
+<div
+    class="zona-izquierda"
+    onclick="anterior()">
+</div>
+
+
+<div
+    class="zona-derecha"
+    onclick="siguiente()">
+</div>
+
+
+<script>
+
+
+/* =========================
+   DIAPOSITIVAS
+   ========================= */
+
+let diapositivaActual = 0;
+
+
+const diapositivas =
+    document.querySelectorAll(
+        ".diapositiva"
+    );
+
+
+function mostrarDiapositiva(numero) {
+
+
+    if (
+        numero < 0 ||
+        numero >= diapositivas.length
+    ) {
+
+        return;
+
+    }
+
+
+    diapositivas[
+        diapositivaActual
+    ].classList.remove(
+        "activa"
+    );
+
+
+    diapositivaActual = numero;
+
+
+    diapositivas[
+        diapositivaActual
+    ].classList.add(
+        "activa"
+    );
+
+}
+
+
+function siguiente() {
+
+
+    if (
+        diapositivaActual <
+        diapositivas.length - 1
+    ) {
+
+        mostrarDiapositiva(
+            diapositivaActual + 1
+        );
+
+    }
+
+}
+
+
+function anterior() {
+
+
+    if (
+        diapositivaActual > 0
+    ) {
+
+        mostrarDiapositiva(
+            diapositivaActual - 1
+        );
+
+    }
+
+}
+
+
+/* =========================
+   TECLADO
+   ========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+
+        if (
+            event.key ===
+            "ArrowRight"
+        ) {
+
+            siguiente();
+
+        }
+
+
+        if (
+            event.key ===
+            "ArrowLeft"
+        ) {
+
+            anterior();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   CARTAS
+   ========================= */
+
+const cartas =
+    document.querySelectorAll(
+        ".carta"
+    );
+
+
+const mensajeFinal =
+    document.querySelector(
+        ".mensaje-final"
+    );
+
+
+let cartasAbiertas = 0;
+
+
+cartas.forEach(
+    function(carta) {
+
+
+        carta.addEventListener(
+            "click",
+            function() {
+
+
+                if (
+                    !carta.classList.contains(
+                        "abierta"
+                    )
+                ) {
+
+                    carta.classList.add(
+                        "abierta"
+                    );
+
+                    cartasAbiertas++;
+
+                }
+
+
+                if (
+                    cartasAbiertas ===
+                    cartas.length
+                ) {
+
+                    mensajeFinal.classList.add(
+                        "mostrar"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================
+   CELULAR
+   ========================= */
+
+let inicioX = 0;
+
+
+document.addEventListener(
+    "touchstart",
+    function(event) {
+
+        inicioX =
+            event.touches[0].clientX;
+
+    }
+);
+
+
+document.addEventListener(
+    "touchend",
+    function(event) {
+
+        let finalX =
+            event.changedTouches[0].clientX;
+
+
+        let diferencia =
+            finalX - inicioX;
+
+
+        if (
+            diferencia < -50
+        ) {
+
+            siguiente();
+
+        }
+
+
+        if (
+            diferencia > 50
+        ) {
+
+            anterior();
+
+        }
+
+    }
+);
+
+
+</script>
+
+
+</body>
+
+</html>
