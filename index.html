@@ -673,35 +673,22 @@ body {
 
 /* IMAGEN DEL FONDO */
 
-.fondo-final {
+.final {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 1;
-    display: block;
-}
-
-
-/* OSCURECIMIENTO */
-
-.final::after {
-
-    content: "";
-
-    position: absolute;
-
     inset: 0;
+    overflow: hidden;
+    color: white;
 
-    background:
-        rgba(0,0,0,0.20);
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,0.20),
+            rgba(0,0,0,0.20)
+        ),
+        url("fotos/final.jpg");
 
-    z-index: 1;
-
-    pointer-events: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
@@ -1208,9 +1195,8 @@ body {
         </h1>
 
     </div>
-
+	
 </section>
-
 
 </div>
 
