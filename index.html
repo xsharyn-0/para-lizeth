@@ -674,21 +674,15 @@ body {
 /* IMAGEN DEL FONDO */
 
 .fondo-final {
-
     position: absolute;
-
-    inset: 0;
-
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     object-position: center;
-
-    z-index: 0;
-
-    filter: brightness(0.80);
+    z-index: 1;
+    display: block;
 }
 
 
@@ -713,32 +707,26 @@ body {
 
 /* TEXTO */
 
-.final h1 {
+.texto-final {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
 
-    position: relative;
-
-    z-index: 2;
-
+.texto-final h1 {
     margin: 0;
-
-    font-family:
-        "Great Vibes",
-        cursive;
-
-    font-size:
-        clamp(75px, 11vw, 165px);
-
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(75px, 11vw, 165px);
     font-weight: normal;
-
     color: #fffaf5;
-
     letter-spacing: 2px;
-
     text-shadow:
         0 4px 15px rgba(0,0,0,0.55),
         0 0 25px rgba(255,255,255,0.25);
 }
-
 
 /* =========================
    NAVEGACIÓN
@@ -1206,18 +1194,20 @@ body {
      DIAPOSITIVA 5
      ========================= -->
 
-<section
-    class="diapositiva final">
+<section class="diapositiva final">
 
-<img
-    src="fotos/final.jpg"
-    class="fondo-final"
-    alt="">
+    <img
+        src="fotos/final.jpg"
+        class="fondo-final"
+        alt="">
 
-    <h1>
-        Te amo, Lizeth
-    </h1>
+    <div class="texto-final">
 
+        <h1>
+            Te amo, Lizeth
+        </h1>
+
+    </div>
 
 </section>
 
